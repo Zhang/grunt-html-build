@@ -1,3 +1,17 @@
+# grunt-html-build ZHANG FORK
+
+## Only change
+
+Grunt html build doesn't currently support path creation from a root directory (cann only provide relative paths or direct paths from the location of gruntfile.js) (ignore the solution posted in their issues).
+
+Added functionality for new option:
+### removeRoot
+ **type:** string |
+ **optional** |
+ **default:** false
+
+Strips away root string from the prefix of paths
+
 # grunt-html-build [![NPM version](https://badge.fury.io/js/grunt-html-build.png)](http://badge.fury.io/js/grunt-html-build)
 
 [Grunt][grunt] HTML Builder - Appends scripts and styles, Removes debug parts, append html partials, Template options
@@ -85,7 +99,7 @@ Using the configuration above, consider the following example html to see it in 
     <!-- build:remove -->
     <script type="text/javascript" src="/path/to/js/only-dev.js"></script>
     <!-- /build -->
-    
+
     <!-- build:remove dev -->
     <script type="text/javascript" src="/path/analytics.js"></script>
     <!-- /build -->
@@ -189,7 +203,7 @@ There 5 types of processors:
 * 0.1.4 Fixing nodejs dependencies
 * 0.1.5 Optimize src loop / Fix js-beautify options
 * 0.1.6 Allow build tag customization
-* 0.2.0 
+* 0.2.0
     * Fix and optimisation
     * Allow replacing src file by built file
     * Allow filename in dest path
